@@ -59,3 +59,40 @@ input#picker {
 input#picker.active {
   transform: scale(1.07);
 }
+
+button#etchReset {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background-color: #2f365f;
+  color: #f7f1ed;
+  transition: transform 0.1s ease-in-out;
+}
+
+button#etchReset.active {
+  transform: scale(1.07);
+}
+
+/* MEDIA OBJECTS */
+
+@media (max-width: 900px) {
+  div.container {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 650px) {
+  div.container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  div.container {
+    width: 250px;
+    height: 250px;
+  }
+}

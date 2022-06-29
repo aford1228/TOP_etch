@@ -9,6 +9,8 @@ const container = document.querySelector('.container');
 
 const resetButton = document.querySelector('button#etchReset');
 resetButton.addEventListener('click', reset);
+resetButton.addEventListener('mouseover', addStatus);
+resetButton.addEventListener('mouseleave', removeStatus);
 
 const picker = document.querySelector('input#picker');
 picker.oninput = (e) => changeActiveColor(e.target.value);

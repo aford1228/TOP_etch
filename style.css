@@ -38,6 +38,7 @@ div.container {
   padding: 0;
   margin: auto;
   border: 1px solid black;
+  box-shadow: 0 0 6px 3px #000000;
 }
 
 .block {
@@ -55,7 +56,6 @@ input#picker {
   transition: transform 0.1s ease-in-out;
 }
 
-input#picker:hover {
+input#picker.active {
   transform: scale(1.07);
-  box-shadow: 0 0 5px 0 #000000;
 }

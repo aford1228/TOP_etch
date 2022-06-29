@@ -12,6 +12,8 @@ resetButton.addEventListener('click', reset);
 
 const picker = document.querySelector('input#picker');
 picker.oninput = (e) => changeActiveColor(e.target.value);
+picker.addEventListener('mouseover', addStatus);
+picker.addEventListener('mouseleave', removeStatus);
 
 let mouseDown = false;
 document.body.onmousedown = () => mouseDown = true;
@@ -37,11 +39,20 @@ function colorMorph (e) {
 
 function changeActiveColor (newColor) {
   curColor = newColor;
+  container.style.boxShadow = `0 0 6px 3px ${curColor}`;
 }
 
 function reset () {
   container.innerHTML = '';
   createGrid(curSize);
+}
+
+function addStatus (e) {
+  e.target.classList.add('active');
+}
+
+function removeStatus (e) {
+  e.target.classList.remove('active');
 }
 
 window.onload = () => {

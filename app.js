@@ -1,10 +1,11 @@
 createGrid();
 
 function createGrid () {
+  const mainWrapper = document.querySelector('.mainWrapper')
   const container = document.createElement('div');
   container.classList.add('container');
   container.style = 'display:flex;';
-  document.body.appendChild(container);
+  mainWrapper.appendChild(container);
   for (let i = 0; i < 4; i++) {
   let row = document.createElement('div');
   row.classList.add('row');

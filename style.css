@@ -1,5 +1,5 @@
 html {
-  
+  box-sizing: border-box;
 }
 
 body {
@@ -19,19 +19,42 @@ div.mainWrapper {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0% auto 0 auto;
-  margin: 5% 0;
+  height: 100%;
+  padding: 30px;
+  margin: 0;
 }
 
 div.container {
   display: flex;
-  flex: none;
+  flex: 1 auto;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 800px;
+  height: 100%;
   padding: 0;
+  margin: auto;
+  border: 1px solid black;
+}
+
+div.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  height: 25%;
+}
+
+div.breaker {
+  flex-basis: 100%;
+  height: 0;
   margin: 0;
+  padding: 0;
 }
 
 .block {
-  width: 100px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  width: 25%;
   height: 100px;
   border: 1px solid black;
 }

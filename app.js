@@ -1,24 +1,29 @@
-createGrid();
+const defColor = '#ffffff';
+const defSize = 50;
 
-function createGrid () {
-  const mainWrapper = document.querySelector('.mainWrapper')
+const mainWrapper = document.querySelector('.mainWrapper')
+const gridContainer = document.querySelector('.container');
+const blocks = document.querySelectorAll('.block');
+
+function createGrid (size) {
   const container = document.createElement('div');
   container.classList.add('container');
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   mainWrapper.appendChild(container);
-  for (let i = 0; i < 4; i++) {
-  let row = document.createElement('div');
-  let breaker = document.createElement('div');
-  row.classList.add('row');
-  breaker.classList.add('breaker');
-  for (let j = 0; j < 4; j++) {
-      let block = document.createElement('div');
+  for (let j = 0; j < size * size; j++) {
+      const block = document.createElement('div');
       block.classList.add('block');
-      row.appendChild(block);
-  };
-  container.appendChild(row);
-  container.appendChild(breaker);
+      block.addEventListener('mouseover', changeColor);
+      block.addEventListener('mousedown', changeColor);
+      container.appendChild(block);
   };
 };
-const gridContainer = document.querySelector('.container');
-const rows = document.querySelectorAll('.row');
-const blocks = document.querySelectorAll('.block');
+
+function changeColor () {
+
+}
+
+window.onload = () => {
+  createGrid(defSize);
+}

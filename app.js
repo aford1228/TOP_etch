@@ -1,12 +1,17 @@
 const defColor = '#000000';
+let curColor = defColor;
+
 const defSize = 50;
 let curSize = defSize;
 
 const mainWrapper = document.querySelector('.mainWrapper');
 const container = document.querySelector('.container');
+
 const resetButton = document.querySelector('button#etchReset');
 resetButton.addEventListener('click', reset);
-let curColor = defColor;
+
+const picker = document.querySelector('input#picker');
+picker.oninput = (e) => changeActiveColor(e.target.value);
 
 let mouseDown = false;
 document.body.onmousedown = () => mouseDown = true;
@@ -30,7 +35,7 @@ function colorMorph (e) {
   e.target.style.backgroundColor = curColor;
 }
 
-function changeColor (newColor) {
+function changeActiveColor (newColor) {
   curColor = newColor;
 }
 

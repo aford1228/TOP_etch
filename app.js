@@ -1,9 +1,16 @@
 const defColor = '#000000';
 const defSize = 50;
+let curSize = defSize;
 
 const mainWrapper = document.querySelector('.mainWrapper');
 const container = document.querySelector('.container');
+const resetButton = document.querySelector('button#etchReset');
+resetButton.addEventListener('click', reset);
 let curColor = defColor;
+
+let mouseDown = false;
+document.body.onmousedown = () => mouseDown = true;
+document.body.onmouseup = () => mouseDown = false;
 
 function createGrid (size) {
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -19,12 +26,17 @@ function createGrid (size) {
 };
 
 function colorMorph (e) {
-  e.target.classList.add('filled');
+  if (e.type === 'mouseover' && !mouseDown) return;
   e.target.style.backgroundColor = curColor;
 }
 
 function changeColor (newColor) {
   curColor = newColor;
+}
+
+function reset () {
+  container.innerHTML = '';
+  createGrid(curSize);
 }
 
 window.onload = () => {

@@ -1,22 +1,16 @@
-const defColor = '#000000';
-let curColor = defColor;
+const DEFAULT_COLOR = '#000000';
+let curColor = DEFAULT_COLOR;
 
-const defSize = 50;
-let curSize = defSize;
+const DEFAULT_SIZE = 50;
+let curSize = DEFAULT_SIZE;
 
 const mainContent = document.querySelector('#mainContent');
 const container = document.querySelector('.container');
-
+const slider = document.querySelector('.slider');
 const resetButton = document.querySelector('#etchReset');
 resetButton.addEventListener('click', reset);
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener('mouseover', addStatus));
-buttons.forEach(button => button.addEventListener('mouseout', removeStatus));
-
 const picker = document.querySelector('input#picker');
 picker.oninput = (e) => changeActiveColor(e.target.value);
-picker.addEventListener('mouseover', addStatus);
-picker.addEventListener('mouseleave', removeStatus);
 
 let mouseDown = false;
 document.body.onmousedown = () => mouseDown = true;
@@ -25,8 +19,7 @@ document.body.onmouseup = () => mouseDown = false;
 function createGrid (size) {
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-  mainContent.appendChild(container);
-  for (let j = 0; j < size * size; j++) {
+  for (let i = 0; i < size * size; i++) {
       const block = document.createElement('div');
       block.classList.add('block');
       block.addEventListener('mouseover', colorMorph);
@@ -50,14 +43,10 @@ function reset () {
   createGrid(curSize);
 }
 
-function addStatus (e) {
-  e.target.classList.add('active');
-}
-
-function removeStatus (e) {
-  e.target.classList.remove('active');
+function toggleStatus(e) {
+  e.target.classList.toggle('active');
 }
 
 window.onload = () => {
-  createGrid(defSize);
+  createGrid(DEFAULT_SIZE);
 }

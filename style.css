@@ -1,37 +1,19 @@
+:root {
+  --dark: #333;
+  --light: #f7f1ed;
+}
+
 html {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
 
-/*
-
-#2f365f is a darkish blue
-#febeb0 is a pale salmon
-
-*/
-
 body {
   margin: 0;
   padding: 0;
-  background-color: #333;
-  /*
-  background-image: url('etch.JPG');
-  background-size: cover;
-  background-repeat: no-repeat; 
-  */
+  background-color: var(--light);
 }
-/*
-div.mainWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-*/
+
 #header {
   padding: 30px 0;
 }
@@ -54,7 +36,7 @@ div.mainWrapper {
 .sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 30px;
   width: 200px;
@@ -70,7 +52,7 @@ div.mainWrapper {
   margin: 30px;
   border: 1px solid black;
   box-shadow: 0 0 6px 3px #000000;
-  background-color: #f7f1ed;
+  background-color: var(--light);
 }
 
 .block {
@@ -79,24 +61,35 @@ div.mainWrapper {
   padding: 0;
 }
 
+.active {
+  transform: scale(1.07);
+  cursor: pointer;
+}
+
 button, input {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 900;
 }
 
+input:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 button {
   width: 100%;
   height: 50px;
-  border: 1px solid #f7f1ed;
+  border: 2px solid var(--dark);
   border-radius: 7px;
   background-color: inherit;
-  color: #f7f1ed;
-  transition: transform 0.1s ease-in-out;
+  color: var(--dark);
+  transition: transform 0.2s ease-in-out;
 }
 
-button.active {
-  transform: scale(1.07);
+button:hover {
+  background-color: rgb(192, 192, 192);
+  cursor: pointer;
 }
 
 #picker {
@@ -108,9 +101,72 @@ button.active {
   transition: transform 0.1s ease-in-out;
 }
 
-#picker.active {
-  transform: scale(1.07);
+/* DARK/LIGHT MODE SWITCH */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
 }
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.slider.active {
+  background-color: var(--light);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 3px;
+  border-radius: 50%;
+  background-color: var(--dark);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+input + .slider {
+  background-color: var(--light);
+}
+
+input:checked + .slider {
+  background-color: var(--dark);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+  background-color: var(--light);
+}
+
+/* Rounded sliders */
+.slider.round {
+}
+
+.slider.round:before {
+}
+
 
 /* MEDIA OBJECTS */
 
@@ -129,6 +185,10 @@ button.active {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+  }
+
+  .sidebar {
+    padding-top: 0px;
   }
 
   .container {

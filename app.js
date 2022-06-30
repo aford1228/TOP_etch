@@ -4,13 +4,14 @@ let curColor = defColor;
 const defSize = 50;
 let curSize = defSize;
 
-const mainWrapper = document.querySelector('.mainWrapper');
+const mainContent = document.querySelector('#mainContent');
 const container = document.querySelector('.container');
 
-const resetButton = document.querySelector('button#etchReset');
+const resetButton = document.querySelector('#etchReset');
 resetButton.addEventListener('click', reset);
-resetButton.addEventListener('mouseover', addStatus);
-resetButton.addEventListener('mouseleave', removeStatus);
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('mouseover', addStatus));
+buttons.forEach(button => button.addEventListener('mouseout', removeStatus));
 
 const picker = document.querySelector('input#picker');
 picker.oninput = (e) => changeActiveColor(e.target.value);
@@ -24,7 +25,7 @@ document.body.onmouseup = () => mouseDown = false;
 function createGrid (size) {
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
-  mainWrapper.appendChild(container);
+  mainContent.appendChild(container);
   for (let j = 0; j < size * size; j++) {
       const block = document.createElement('div');
       block.classList.add('block');

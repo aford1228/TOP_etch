@@ -114,7 +114,10 @@ button:hover {
 .pColor {
   margin: 0;
   padding: 0;
-  font-size: 60px;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 10px;
+  line-height: 0.85em;
   background: linear-gradient(
     #fd004c 16.7%,
     #fe9000 16.7%,

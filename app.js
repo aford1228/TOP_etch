@@ -5,7 +5,6 @@ const resetButton = document.querySelector('#etchReset');
 resetButton.addEventListener('click', reset);
 const picker = document.querySelector('input#picker');
 picker.oninput = (e) => changeActiveColor(e.target.value);
-const pColor = document.querySelector('.pColor');
 
 const DEFAULT_COLOR = '#000000';
 let curColor = picker.value;

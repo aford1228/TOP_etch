@@ -36,11 +36,12 @@ function colorMorph (e) {
 
 function changeActiveColor (newColor) {
   curColor = newColor;
-  //container.style.boxShadow = `0 0 6px 3px ${curColor}`;
 }
 
 function reset () {
   container.innerHTML = '';
+  container.classList.toggle('shake');
+  setTimeout(() => container.classList.toggle('shake'), 1000);
   createGrid(curSize);
 }
 

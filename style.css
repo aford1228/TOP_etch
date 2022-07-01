@@ -1,5 +1,5 @@
 :root {
-  --dark: #333;
+  --dark: #1f2028;
   --light: #f7f1ed;
 }
 
@@ -102,6 +102,13 @@ button:hover {
   transition: transform 0.1s ease-in-out;
 }
 
+/* CONTAINER RESET SHAKE ANIMATION */
+
+.shake {
+  animation: shake 1s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+}
+
 /* COLOR TRANSITION TEXT */
 
 .pColor {
@@ -185,20 +192,38 @@ input:checked + .slider:before {
   background-color: var(--light);
 }
 
-/* Rounded sliders */
-.slider.round {
-}
-
-.slider.round:before {
-}
-
-
 /* MEDIA OBJECTS */
 
 @keyframes rainbow {
+
   100% {
     background-position: 0 30em;
   }
+
+}
+
+@keyframes shake {
+
+  10%, 90% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(8px, 0, 0);
+  }
+
+  30%, 70% {
+    transform: translate3d(-16px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(16px, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(8px, 0, 0);
+  }
+
 }
 
 @media (max-width: 900px) {

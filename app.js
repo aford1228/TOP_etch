@@ -38,10 +38,12 @@ function changeActiveColor (newColor) {
 }
 
 function reset () {
-  container.innerHTML = '';
   container.classList.toggle('shake');
+  const blocks = document.querySelectorAll('.block');
+  blocks.forEach(block => setTimeout(block.classList.toggle('disappear'), 1000));
   setTimeout(() => container.classList.toggle('shake'), 1000);
-  createGrid(curSize);
+  setTimeout(() => container.innerHTML = '', 900);
+  setTimeout(() => createGrid(curSize), 1000);
 }
 
 function toggleStatus(e) {

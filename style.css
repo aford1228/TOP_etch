@@ -51,7 +51,7 @@ body {
   padding: 0;
   margin: 30px;
   border: 1px solid black;
-  box-shadow: 0 0 6px 3px #000000;
+  box-shadow: 0 0 10px 0 var(--dark);
   background-color: #f5f5f5;
 }
 
@@ -102,6 +102,8 @@ button:hover {
   transition: transform 0.1s ease-in-out;
 }
 
+/* COLOR TRANSITION TEXT */
+
 .pColor {
   margin: 0;
   padding: 0;
@@ -129,7 +131,6 @@ button:hover {
 
 .switch {
   position: relative;
-  display: inline-block;
   width: 40px;
   height: 22px;
 }

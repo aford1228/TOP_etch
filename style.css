@@ -33,7 +33,7 @@ body {
   max-width: 1000px;
 }
 
-.sidebar {
+#sidebar {
   display: flex;
   flex: none;
   flex-direction: column;
@@ -44,7 +44,7 @@ body {
   gap: 2em;
 }
 
-.container {
+#container {
   display: grid;
   flex: none;
   width: 500px;

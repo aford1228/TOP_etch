@@ -1,9 +1,9 @@
 const mainContent = document.querySelector('#mainContent');
-const container = document.querySelector('.container');
+const container = document.querySelector('#container');
 const slider = document.querySelector('.slider');
 const resetButton = document.querySelector('#etchReset');
 resetButton.addEventListener('click', reset);
-const picker = document.querySelector('input#picker');
+const picker = document.querySelector('#picker');
 picker.oninput = (e) => changeActiveColor(e.target.value);
 
 const DEFAULT_COLOR = '#000000';

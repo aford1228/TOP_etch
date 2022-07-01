@@ -52,7 +52,7 @@ body {
   margin: 30px;
   border: 1px solid black;
   box-shadow: 0 0 6px 3px #000000;
-  background-color: var(--light);
+  background-color: #f5f5f5;
 }
 
 .block {
@@ -66,15 +66,11 @@ body {
   cursor: pointer;
 }
 
-button, input {
+label, button, input {
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 900;
-}
-
-input:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+  text-align: center;
 }
 
 button {
@@ -87,18 +83,46 @@ button {
   transition: transform 0.2s ease-in-out;
 }
 
+input:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 button:hover {
   background-color: rgb(192, 192, 192);
   cursor: pointer;
 }
 
 #picker {
-  margin: 0;
+  margin-top: 10px;
   padding: 0;
   width: 100px;
   height: 100px;
   border: none;
   transition: transform 0.1s ease-in-out;
+}
+
+.pColor {
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+  background: linear-gradient(
+    #fd004c 16.7%,
+    #fe9000 16.7%,
+    #fe9000 33.4%,
+    #fff020 33.4%,
+    #fff020 50.1%,
+    #3edf4b 50.1%,
+    #3edf4b 66.8%,
+    #3363ff 66.8%,
+    #3363ff 83.5%,
+    #b102b7 83.5%
+  );
+  -webkit-text-stroke: 0.07em var(--dark);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow 50s linear infinite;
 }
 
 /* DARK/LIGHT MODE SWITCH */
@@ -169,6 +193,12 @@ input:checked + .slider:before {
 
 
 /* MEDIA OBJECTS */
+
+@keyframes rainbow {
+  100% {
+    background-position: 0 30em;
+  }
+}
 
 @media (max-width: 900px) {
 

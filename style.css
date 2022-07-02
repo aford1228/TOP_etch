@@ -74,33 +74,7 @@ body {
   width: 200px;
   gap: 1em;
 }
-/*
-#pColor {
-  margin: 0;
-  padding: 0;
-  font-size: 40px;
-  text-align: center;
-  letter-spacing: 10px;
-  line-height: 0.9em;
-  background: linear-gradient(
-    #fd004c 16.7%,
-    #fe9000 16.7%,
-    #fe9000 33.4%,
-    #fff020 33.4%,
-    #fff020 50.1%,
-    #3edf4b 50.1%,
-    #3edf4b 66.8%,
-    #3363ff 66.8%,
-    #3363ff 83.5%,
-    #b102b7 83.5%
-  );
-  -webkit-text-stroke: 0.07em var(--dark);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: rainbow 50s linear infinite;
-}
-*/
+
 #picker {
   margin-top: 10px;
   padding: 0;
@@ -161,8 +135,7 @@ button#rainbow.active {
   #b102b7 83.5%
 );
 color: var(--dark);
-animation: rainbow 50s linear infinite;
-
+animation: rainbow 60s linear infinite;
 }
 
 /* DARK/LIGHT MODE SWITCH */

@@ -74,7 +74,7 @@ body {
   width: 200px;
   gap: 1em;
 }
-
+/*
 #pColor {
   margin: 0;
   padding: 0;
@@ -100,7 +100,7 @@ body {
   color: transparent;
   animation: rainbow 50s linear infinite;
 }
-
+*/
 #picker {
   margin-top: 10px;
   padding: 0;
@@ -117,7 +117,7 @@ body {
 
 label, button, input {
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 900;
   text-align: center;
 }
@@ -145,6 +145,24 @@ button:hover {
 .active {
   background-color: var(--dark);
   color: var(--light);
+}
+
+button#rainbow.active {
+  background: linear-gradient(
+  #fd004c 16.7%,
+  #fe9000 16.7%,
+  #fe9000 33.4%,
+  #fff020 33.4%,
+  #fff020 50.1%,
+  #3edf4b 50.1%,
+  #3edf4b 66.8%,
+  #3363ff 66.8%,
+  #3363ff 83.5%,
+  #b102b7 83.5%
+);
+color: var(--dark);
+animation: rainbow 50s linear infinite;
+
 }
 
 /* DARK/LIGHT MODE SWITCH */

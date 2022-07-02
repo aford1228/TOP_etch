@@ -20,10 +20,10 @@ body {
 }
 
 #header h1 {
-  text-align: center;
-  font-size: 60px;
   padding: 0;
   margin: 0;
+  text-align: center;
+  font-size: 60px;
 }
 
 #mainContent {
@@ -51,6 +51,7 @@ body {
   user-select: none;
   margin: 0;
   padding: 0;
+  transition: all 0.25s;
 }
 
 .disappear {
@@ -70,7 +71,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 30px;
+  padding: 0;
+  margin: 30px;
   width: 200px;
   gap: 1em;
 }
@@ -142,7 +144,9 @@ animation: rainbow 60s linear infinite;
 /* DARK/LIGHT MODE SWITCH */
 
 .switch {
-  position: relative;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   width: 40px;
   height: 22px;
 }
@@ -288,7 +292,8 @@ input:checked + .slider:before {
   }
 
   #sidebar {
-    padding: 15px;
+    padding: 0;
+    margin: 15px;
   }
 
 }

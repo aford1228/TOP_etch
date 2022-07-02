@@ -12,6 +12,9 @@ let curColor = picker.value;
 const DEFAULT_SIZE = 50;
 let curSize = DEFAULT_SIZE;
 
+//const DEFAULT_MODE = rainbow;
+//let curMode = DEFAULT_MODE;
+
 let mouseDown = false;
 document.body.onmousedown = () => mouseDown = true;
 document.body.onmouseup = () => mouseDown = false;
@@ -30,8 +33,16 @@ function createGrid (size) {
 
 function colorMorph (e) {
   if (e.type === 'mouseover' && !mouseDown) return;
-  e.target.style.backgroundColor = curColor;
-}
+  //if (curMode == monocolor) {
+   // e.target.style.backgroundColor = curColor;
+  //}
+  //else if (curMode = rainbow) {
+    let r = ~~((Math.random()) * 256);
+    let g = ~~((Math.random()) * 256);
+    let b = ~~((Math.random()) * 256);
+    e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  }
+
 
 function changeActiveColor (newColor) {
   curColor = newColor;

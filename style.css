@@ -34,17 +34,6 @@ body {
   max-width: 1000px;
 }
 
-#sidebar {
-  display: flex;
-  flex: none;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 30px;
-  width: 200px;
-  gap: 2em;
-}
-
 #container {
   display: grid;
   flex: none;
@@ -66,9 +55,19 @@ body {
   animation: disappear 1s linear;
 }
 
+#sidebar {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  width: 200px;
+  gap: 1em;
+}
+
 .active {
-  transform: scale(1.07);
-  cursor: pointer;
+  
 }
 
 label, button, input {
@@ -311,7 +310,6 @@ input:checked + .slider:before {
   #container {
     width: 300px;
     height: 300px;
-    margin-top: 0;
   }
 
 }

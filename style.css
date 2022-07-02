@@ -113,15 +113,16 @@ input:hover {
 
 button:hover {
   background-color: rgb(192, 192, 192);
+  color: var(--dark);
   cursor: pointer;
 }
 
-.active {
+.active, .active:hover {
   background-color: var(--dark);
   color: var(--light);
 }
 
-button#rainbow.active {
+#rainbow.active, #rainbow:hover {
   background: linear-gradient(
   #fd004c 16.7%,
   #fe9000 16.7%,

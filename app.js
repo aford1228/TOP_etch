@@ -17,13 +17,13 @@ const resetButton = document.querySelector('#etchReset');
 resetButton.addEventListener('click', reset);
 
 const monoButton = document.querySelector('#monocolor');
-monoButton.addEventListener('click', changeMode('monocolor'));
+monoButton.onclick = () => changeMode('monocolor');
 
 const rainbowButton = document.querySelector('#rainbow');
-rainbowButton.addEventListener('click', changeMode('rainbow'));
+rainbowButton.onclick = () => changeMode('rainbow');
 
 const eraserButton = document.querySelector('#eraser');
-eraserButton.addEventListener('click', changeMode('eraser'));
+eraserButton.onclick = () => changeMode('eraser');
 
 let curColor = picker.value;
 
@@ -49,25 +49,14 @@ function changeMode (newMode) {
 }
 
 function buttonMode(newMode) {
-  if (curMode === 'monocolor') {
-    monoButton.classList.remove('active')
-  }
-  else if (curMode === 'rainbow') {
-    rainbowButton.classList.remove('active')
-  }
-  else if (curMode === 'eraser') {
-    eraserButton.classList.remove('active')
-  }
+  console.log(newMode);
+  curMode === 'monocolor' ? monoButton.classList.remove('active')
+  : curMode === 'rainbow' ? rainbowButton.classList.remove('active')
+  : eraserButton.classList.remove('active');
 
-  if (newMode === 'monocolor') {
-    monoButton.classList.add('active')
-  }
-  else if (newMode === 'rainbow') {
-    rainbowButton.classList.add('active')
-  }
-  else if (newMode === 'eraser') {
-    eraserButton.classList.add('active')
-  };
+  newMode === 'monocolor' ? monoButton.classList.add('active')
+  : newMode === 'rainbow' ? rainbowButton.classList.add('active')
+  : eraserButton.classList.add('active');
 }
 
 function colorMorph (e) {

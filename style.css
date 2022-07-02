@@ -67,7 +67,8 @@ body {
 }
 
 .active {
-  
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 label, button, input {

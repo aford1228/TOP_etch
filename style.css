@@ -34,6 +34,8 @@ body {
   max-width: 1000px;
 }
 
+/* container + block styles and effects */
+
 #container {
   display: grid;
   flex: none;
@@ -55,6 +57,13 @@ body {
   animation: disappear 1s linear;
 }
 
+.shake {
+  animation: shake 1s linear;
+  transform: translate3d(0, 0, 0);
+}
+
+/* sidebar styles and effects */
+
 #sidebar {
   display: flex;
   flex: none;
@@ -66,9 +75,44 @@ body {
   gap: 1em;
 }
 
-.active {
-  background-color: var(--dark);
-  color: var(--light);
+#pColor {
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 10px;
+  line-height: 0.9em;
+  background: linear-gradient(
+    #fd004c 16.7%,
+    #fe9000 16.7%,
+    #fe9000 33.4%,
+    #fff020 33.4%,
+    #fff020 50.1%,
+    #3edf4b 50.1%,
+    #3edf4b 66.8%,
+    #3363ff 66.8%,
+    #3363ff 83.5%,
+    #b102b7 83.5%
+  );
+  -webkit-text-stroke: 0.07em var(--dark);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow 50s linear infinite;
+}
+
+#picker {
+  margin-top: 10px;
+  padding: 0;
+  width: 100px;
+  height: 100px;
+  border: none;
+  transition: transform 0.1s ease-in-out;
+}
+
+#rgb {
+  margin: 0;
+  padding: 0;
 }
 
 label, button, input {
@@ -98,48 +142,9 @@ button:hover {
   cursor: pointer;
 }
 
-#picker {
-  margin-top: 10px;
-  padding: 0;
-  width: 100px;
-  height: 100px;
-  border: none;
-  transition: transform 0.1s ease-in-out;
-}
-
-/* CONTAINER RESET SHAKE ANIMATION */
-
-.shake {
-  animation: shake 1s linear;
-  transform: translate3d(0, 0, 0);
-}
-
-/* COLOR TRANSITION TEXT */
-
-.pColor {
-  margin: 0;
-  padding: 0;
-  font-size: 40px;
-  text-align: center;
-  letter-spacing: 10px;
-  line-height: 0.9em;
-  background: linear-gradient(
-    #fd004c 16.7%,
-    #fe9000 16.7%,
-    #fe9000 33.4%,
-    #fff020 33.4%,
-    #fff020 50.1%,
-    #3edf4b 50.1%,
-    #3edf4b 66.8%,
-    #3363ff 66.8%,
-    #3363ff 83.5%,
-    #b102b7 83.5%
-  );
-  -webkit-text-stroke: 0.07em var(--dark);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: rainbow 50s linear infinite;
+.active {
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 /* DARK/LIGHT MODE SWITCH */

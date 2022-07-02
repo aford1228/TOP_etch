@@ -13,6 +13,9 @@ let curMode = DEFAULT_MODE;
 const picker = document.querySelector('#picker');
 picker.oninput = (e) => changeActiveColor(e.target.value);
 
+const rgb = document.querySelector('#rgb');
+rgb.textContent = `${picker.value}`;
+
 const resetButton = document.querySelector('#etchReset');
 resetButton.addEventListener('click', reset);
 
@@ -49,7 +52,6 @@ function changeMode (newMode) {
 }
 
 function buttonMode(newMode) {
-  console.log(newMode);
   curMode === 'monocolor' ? monoButton.classList.remove('active')
   : curMode === 'rainbow' ? rainbowButton.classList.remove('active')
   : eraserButton.classList.remove('active');
@@ -77,6 +79,7 @@ function colorMorph (e) {
 
 function changeActiveColor (newColor) {
   curColor = newColor;
+  rgb.textContent = `${picker.value}`;
 }
 
 function reset () {
